@@ -1,68 +1,53 @@
-const topBar = document.getElementById('topBar');
+// A function that creates buttons in the top bar
+const createButton = (intervalId, textStart, textStop, func) => {
+  const topBar = document.getElementById('topBar');
+  const block = document.createElement('div');
+  const link = document.createElement('a');
 
-// Variables of the big cookie button;
-const BIG_COOKIE_TEXT_START = 'Start BG clicks';
-const BIG_COOKIE_TEXT_STOP = 'Stop BG clicks';
+  // I use here a link instead of a button only to support styles of the app
+  link.innerText = textStart;
+  link.setAttribute('href', '#cookies');
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if (intervalId) {
+      link.innerText = textStart;
+
+      clearInterval(intervalId);
+      intervalId = null;
+    } else {
+      link.innerText = textStop;
+
+      intervalId = setInterval(func, 50);
+    }
+  });
+
+  block.appendChild(link);
+  topBar.insertBefore(block, topBar.firstChild);
+};
+
+// Variables to store interval IDs
+let goldenCookieInterval = null;
 let bigCookieInterval = null;
 
-// Variables of the golden cookies button;
-const GOLDEN_COOKIE_TEXT_START = 'Start GG clicks';
-const GOLDEN_COOKIE_TEXT_STOP = 'Stop GG clicks';
-let goldenCookieInterval = null;
-
-// The button that triggers automatic clicks to the big cookie
-const bigDiv = document.createElement('div');
-const bigDivLink = document.createElement('a');
-
-bigDivLink.innerText = BIG_COOKIE_TEXT_START;
-bigDivLink.setAttribute('href', '#bigCookie');
-bigDivLink.addEventListener('click', (event) => {
-  event.preventDefault();
-  
-  if (bigCookieInterval) {
-    bigDivLink.innerText = BIG_COOKIE_TEXT_START;
-
-    clearInterval(bigCookieInterval);
-    bigCookieInterval = null;
-  } else {
-    bigDivLink.innerText = BIG_COOKIE_TEXT_STOP;
-
-    bigCookieInterval = setInterval(() => {
-      document.getElementById('bigCookie').click();
-    }, 50);
-  }
-});
-
-bigDiv.appendChild(bigDivLink);
 
 // The button that triggers automatic clicks to the golden cookies
-const goldenDiv = document.createElement('div');
-const goldenDivLink = document.createElement('a');
+createButton(
+  goldenCookieInterval,
+  'Start GG clicks',
+  'Stop GG clicks',
+  () => {
+    Array.from(document.getElementById('shimmers').children).forEach((el) => {
+      el.click();
+    });
+  },
+);
 
-goldenDivLink.innerText = GOLDEN_COOKIE_TEXT_START;
-goldenDivLink.setAttribute('href', '#goldenCookie');
-goldenDivLink.addEventListener('click', (event) => {
-  event.preventDefault();
-  
-  if (goldenCookieInterval) {
-    goldenDivLink.innerText = GOLDEN_COOKIE_TEXT_START;
-
-    clearInterval(goldenCookieInterval);
-    goldenCookieInterval = null;
-  } else {
-    goldenDivLink.innerText = GOLDEN_COOKIE_TEXT_STOP;
-
-    goldenCookieInterval = setInterval(() => {
-      Array.from(document.getElementById('shimmers').children).forEach((el) => {
-        el.click();
-      });
-    }, 50);
-  }
-});
-
-goldenDiv.appendChild(goldenDivLink);
-
-// Append the buttons to the top bar of the application
-topBar.insertBefore(goldenDiv, topBar.firstChild);
-topBar.insertBefore(bigDiv, topBar.firstChild);
+// The button that triggers automatic clicks to the big cookie
+createButton(
+  bigCookieInterval,
+  'Start BG clicks',
+  'Stop BG clicks',
+  () => document.getElementById('bigCookie').click(),
+);
 
