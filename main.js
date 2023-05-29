@@ -29,6 +29,7 @@ const createButton = (intervalId, textStart, textStop, func) => {
 // Variables to store interval IDs
 let goldenCookieInterval = null;
 let bigCookieInterval = null;
+let newsInterval = null;
 
 
 // The button that triggers automatic clicks to the golden cookies
@@ -49,5 +50,19 @@ createButton(
   'Start BG clicks',
   'Stop BG clicks',
   () => document.getElementById('bigCookie').click(),
+);
+
+// The button that triggers automatic clicks to the news
+createButton(
+  newsInterval,
+  'Start News clicks',
+  'Stop News clicks',
+  () => {
+    const news = document.getElementById('commentsText1');
+
+    Array.from(news.children).forEach((el) => {
+        el.className === 'fortune' && news.click();
+    });
+  },
 );
 
