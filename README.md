@@ -19,6 +19,10 @@ Cons of the script:
 
 Copy the code from `main.js` and enter it on the console tab of your browser dev tools, then you will get buttons in the top bar of the cookie clicker game. Using the buttons, you can manipulate automatic clicks of cookies. Have fun.
 
+### What's next?
+
+The game implements a global object called Game. By playing with it, you can achieve new ways in hacking the game.
+
 ### Similar projects
 
 If you're looking for a much simpler variation, check it: https://jstrieb.github.io/posts/auto-cookie/
