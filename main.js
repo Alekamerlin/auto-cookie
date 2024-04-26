@@ -35,8 +35,8 @@ let newsInterval = null;
 // The button that triggers automatic clicks to the golden cookies
 createButton(
   goldenCookieInterval,
-  'Start GG clicks',
-  'Stop GG clicks',
+  'Start GC clicks',
+  'Stop GC clicks',
   () => {
     Array.from(document.getElementById('shimmers').children).forEach((el) => {
       el.click();
@@ -47,8 +47,8 @@ createButton(
 // The button that triggers automatic clicks to the big cookie
 createButton(
   bigCookieInterval,
-  'Start BG clicks',
-  'Stop BG clicks',
+  'Start BC clicks',
+  'Stop BC clicks',
   () => document.getElementById('bigCookie').click(),
 );
 
@@ -65,4 +65,3 @@ createButton(
     });
   },
 );
-
