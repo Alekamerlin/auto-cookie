@@ -1,5 +1,13 @@
 # auto-cookie
+
 A script for auto playing the cookie clicker game.
+
+### Features
+
+Features of the script:
+- Makes clicks for the big cookie, golden cookies and news with the fortune.
+- Doesn't affect your achievements.
+- You don't need additional apps to make clicks.
 
 ### How to use
 
