@@ -49,7 +49,11 @@ createButton(
   bigCookieInterval,
   'Start BC clicks',
   'Stop BC clicks',
-  () => document.getElementById('bigCookie').click(),
+  () => {
+    document.getElementById('bigCookie').click();
+
+    Game.lastClick -= 950;
+  },
 );
 
 // The button that triggers automatic clicks to the news
