@@ -9,6 +9,12 @@ Features of the script:
 - Doesn't affect your achievements.
 - You don't need additional apps to make clicks.
 
+### Cons
+
+Cons of the script:
+- Doesn't have clicks for the wrinklers.
+- Doesn't distinguish good golden cookies from bad.
+
 ### How to use
 
 Copy the code from `main.js` and enter it on the console tab of your browser dev tools, then you will get buttons in the top bar of the cookie clicker game. Using the buttons, you can manipulate automatic clicks of cookies. Have fun.
