@@ -21,6 +21,8 @@ Copy the code from `main.js` and paste it on the console tab of your browser dev
 
 Modern browser may disallow pasting in the console, so you need to type `allow pasting` in the console, press Enter, and then paste the conde from `main.js`.
 
+> **Safari**, **Epiphany**, **Midori** and other WebKit-based browsers are not recommended for use with this script due to poor performance. **Chrome** or **Firefox** may be a better choice.
+
 ### What's next?
 
 The game implements a global object called Game. By playing with it, you can achieve new ways in hacking the game.
