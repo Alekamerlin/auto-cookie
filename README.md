@@ -17,7 +17,9 @@ Cons of the script:
 
 ### How to use
 
-Copy the code from `main.js` and enter it on the console tab of your browser dev tools, then you will get buttons in the top bar of the cookie clicker game. Using the buttons, you can manipulate automatic clicks of cookies. Have fun.
+Copy the code from `main.js` and paste it on the console tab of your browser dev tools, then you will get buttons in the top bar of the cookie clicker game. Using the buttons, you can manipulate automatic clicks of cookies. Have fun.
+
+Modern browser may disallow pasting in the console, so you need to type `allow pasting` in the console, press Enter, and then paste the conde from `main.js`.
 
 ### What's next?
 
