@@ -18,7 +18,7 @@ const createButton = (intervalId, textStart, textStop, func) => {
     } else {
       link.innerText = textStop;
 
-      intervalId = setInterval(func, 50);
+      intervalId = setInterval(func, 10);
     }
   });
 
